@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 
-import { AppService } from './app.service'
+import { AppService } from '../providers/app.service'
 
-import { CreateCatDto, UpdateCatDto } from './dto'
+import { CreateCatDto, UpdateCatDto } from '../dto'
 
-import { CatUI } from './interfaces/interfaces'
+import { CatUI } from '../interfaces/interfaces'
 
 @Controller()
 export class AppController {

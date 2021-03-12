@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { CatUI } from './interfaces/interfaces'
+import { CatUI } from '../interfaces/interfaces'
 
 @Injectable()
 export class AppService {
