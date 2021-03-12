@@ -1,6 +1,8 @@
-import { Controller, Get } from '@nestjs/common'
+import { Body, Controller, Get, Param, Post } from '@nestjs/common'
 
 import { AppService } from './app.service'
+
+import { CreateCatDto } from './create-cat.dto'
 
 @Controller()
 export class AppController {
@@ -16,4 +18,8 @@ export class AppController {
     return `The cat you are looking for is .... #${id} cat.`
   }
 
+  @Post()
+  async createCat(@Body() createCatDto: CreateCatDto) {
+    return `Cat "${createCatDto.name}" was created.`
+  }
 }
