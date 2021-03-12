@@ -1,0 +1,41 @@
+# Get all cats
+
+GET http://localhost:3000/
+
+###
+
+# Get one cat
+
+GET http://localhost:3000/mau
+
+###
+
+# Create new cat
+
+POST http://localhost:3000/
+Content-Type: application/json
+
+{
+  "name": "mau",
+  "age": "1",
+  "breed": "egyptian mau"
+}
+
+###
+
+# Update one cat
+
+PUT http://localhost:3000/mau
+Content-Type: application/json
+
+{
+  "name": "mau",
+  "age": "0.5",
+  "breed": "Egyptian Mau"
+}
+
+###
+
+# Delete one cat
+
+DELETE http://localhost:3000/mau
