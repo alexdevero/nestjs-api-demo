@@ -1,8 +1,8 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common'
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 
 import { AppService } from './app.service'
 
-import { CreateCatDto } from './create-cat.dto'
+import { CreateCatDto, UpdateCatDto } from './dto'
 
 @Controller()
 export class AppController {
@@ -22,4 +22,10 @@ export class AppController {
   async createCat(@Body() createCatDto: CreateCatDto) {
     return `Cat "${createCatDto.name}" was created.`
   }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
+    return `Cat "${id}" was updated.`
+  }
+
 }

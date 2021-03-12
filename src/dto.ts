@@ -3,3 +3,5 @@ export class CreateCatDto {
   age: number
   breed: string
 }
+
+export class UpdateCatDto extends CreateCatDto {}
