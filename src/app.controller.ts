@@ -28,4 +28,8 @@ export class AppController {
     return `Cat "${id}" was updated.`
   }
 
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+    return `Cat "${id}" was deleted.`
+  }
 }
