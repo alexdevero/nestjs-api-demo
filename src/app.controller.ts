@@ -4,32 +4,34 @@ import { AppService } from './app.service'
 
 import { CreateCatDto, UpdateCatDto } from './dto'
 
+import { CatUI } from './interfaces/interfaces'
+
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello()
+  async findAll() {
+    return this.appService.findAll()
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): string {
-    return `The cat you are looking for is .... #${id} cat.`
+  async findOne(@Param('id') id: string): Promise<CatUI[]> {
+    return this.appService.findOne(id)
   }
 
   @Post()
   async createCat(@Body() createCatDto: CreateCatDto) {
-    return `Cat "${createCatDto.name}" was created.`
+    return this.appService.createCat(createCatDto)
   }
 
   @Put(':id')
   update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
-    return `Cat "${id}" was updated.`
+    return this.appService.updateCat(id, updateCatDto)
   }
 
   @Delete(':id')
   delete(@Param('id') id: string) {
-    return `Cat "${id}" was deleted.`
+    return this.appService.deleteCat(id)
   }
 }
