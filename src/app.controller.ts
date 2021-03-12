@@ -10,4 +10,10 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello()
   }
+
+  @Get(':id')
+  findOne(@Param('id') id: string): string {
+    return `The cat you are looking for is .... #${id} cat.`
+  }
+
 }
