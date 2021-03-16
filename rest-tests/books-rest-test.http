@@ -1,0 +1,43 @@
+# Get all books
+
+GET http://localhost:3000/books
+
+###
+
+# Get one book
+
+GET http://localhost:3000/books/6baa09b3-29ec-4016-8a8c-1110ec4b18b6
+
+###
+
+# Create new book
+
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title": "Zero to One",
+  "author": "Peter Thiel",
+  "pubDate": "September 16, 2014",
+  "numOfPages": "188"
+}
+
+###
+
+# Update one book
+
+PUT http://localhost:3000/books/6baa09b3-29ec-4016-8a8c-1110ec4b18b6
+Content-Type: application/json
+
+{
+  "title": "Zero to One",
+  "author": "Peter Thiel",
+  "pubDate": "September 16, 2014",
+  "numOfPages": "224"
+}
+
+###
+
+# Delete one book
+
+DELETE http://localhost:3000/books/zero
