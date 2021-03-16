@@ -1,18 +1,18 @@
 # Get all cats
 
-GET http://localhost:3000/
+GET http://localhost:3000/cats
 
 ###
 
 # Get one cat
 
-GET http://localhost:3000/mau
+GET http://localhost:3000/cats/mau
 
 ###
 
 # Create new cat
 
-POST http://localhost:3000/
+POST http://localhost:3000/cats
 Content-Type: application/json
 
 {
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 # Update one cat
 
-PUT http://localhost:3000/mau
+PUT http://localhost:3000/cats/mau
 Content-Type: application/json
 
 {
@@ -38,4 +38,4 @@ Content-Type: application/json
 
 # Delete one cat
 
-DELETE http://localhost:3000/mau
+DELETE http://localhost:3000/cats/mau

@@ -6,7 +6,7 @@ import { CreateCatDto, UpdateCatDto } from '../dto/cat.dto'
 
 import { CatUI } from '../interfaces/interfaces'
 
-@Controller()
+@Controller('cats')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
