@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common'
+import { v4 as uuidv4 } from 'uuid'
 
 import { CatUI } from '../interfaces/interfaces'
 
@@ -15,17 +16,17 @@ export class AppService {
   }
 
   createCat(cat: CatUI): string {
-    this.cats.push(cat)
+    this.cats.push({
+      ...cat,
+      id: uuidv4()
+    })
     return `Cat "${cat.name}" was created.`
   }
 
   updateCat(id: string, cat: CatUI): string {
-    const catItem = this.cats.find(catItem => catItem.name.toLowerCase() === id.toLowerCase())
-    catItem.name = cat.name
-    catItem.breed = cat.breed
-    catItem.age = cat.age
+    this.cats = this.cats.map(catItem => catItem.name.toLowerCase() === id.toLowerCase() ? {...cat} : catItem)
 
-    return `Cat "${id}" was updated.`
+    return `Cat "${cat.name}" was updated.`
   }
 
   deleteCat(id: string): string {
