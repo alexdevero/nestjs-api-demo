@@ -8,7 +8,7 @@ export class AppService {
   private cats: CatUI[] = []
 
   findOne(id: string): CatUI[] {
-    return this.cats.filter(catItem => catItem.name.toLowerCase() === id.toLowerCase())
+    return this.cats.filter(catItem => catItem.id === id)
   }
 
   findAll(): CatUI[] {
@@ -24,13 +24,13 @@ export class AppService {
   }
 
   updateCat(id: string, cat: CatUI): string {
-    this.cats = this.cats.map(catItem => catItem.name.toLowerCase() === id.toLowerCase() ? {...cat} : catItem)
+    this.cats = this.cats.map(catItem => catItem.id === id ? {...cat} : catItem)
 
     return `Cat "${cat.name}" was updated.`
   }
 
   deleteCat(id: string): string {
-    this.cats = this.cats.filter(catItem => catItem.name.toLowerCase() !== id.toLowerCase())
+    this.cats = this.cats.filter(catItem => catItem.id !== id)
 
     return `Cat "${id}" was deleted.`
   }
