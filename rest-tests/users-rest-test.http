@@ -1,0 +1,41 @@
+# Get all users
+
+GET http://localhost:3000/users
+
+###
+
+# Get one user
+
+GET http://localhost:3000/users/00782be4-6adc-4819-9e4b-7aaed715450f
+
+###
+
+# Create new user
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "username": "james077",
+  "email": "james@077.com",
+  "password": "james_doer_314"
+}
+
+###
+
+# Update one user
+
+PUT http://localhost:3000/users/jjjj
+Content-Type: application/json
+
+{
+  "username": "james077",
+  "email": "james@doer.com",
+  "password": "james_doer_314"
+}
+
+###
+
+# Delete one user
+
+DELETE http://localhost:3000/users/jjjj
